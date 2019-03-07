@@ -22,9 +22,13 @@ function setup() {
     new ClickableSquare(320, CANVAS_HEIGHT - 81, 80, 80, true, Colors.all[4])
   );
 
-  MovementControl.setSpeed(1);
+  MovementControl.setSpeed(2);
 
   const SquareFactory = new SquareCreator();
+  SquareFactory.createRandomSquare();
+  SquareFactory.createRandomSquare();
+  SquareFactory.createRandomSquare();
+  SquareFactory.createRandomSquare();
   SquareFactory.createRandomSquare();
 
   console.log("entitylist", EntityList);
