@@ -5,8 +5,7 @@ const EntityList = [];
 
 function setup() {
   createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT).parent("canvasblock");
-  background(120);
-  EntityList.push(new Square(200, 200, 80, 80, false, Colors.random));
+
   EntityList.push(
     new ClickableSquare(0, CANVAS_HEIGHT - 81, 80, 80, true, Colors.all[0])
   );
@@ -22,6 +21,13 @@ function setup() {
   EntityList.push(
     new ClickableSquare(320, CANVAS_HEIGHT - 81, 80, 80, true, Colors.all[4])
   );
+
+  MovementControl.setSpeed(1);
+
+  const SquareFactory = new SquareCreator();
+  SquareFactory.createRandomSquare();
+
+  console.log("entitylist", EntityList);
 }
 
 function mouseClicked() {
@@ -29,8 +35,12 @@ function mouseClicked() {
 }
 
 function draw() {
+  background(120);
+
   EntityList.forEach(square => {
     fill(square.color);
     square.show();
   });
+
+  MovementControl.moveAll();
 }
