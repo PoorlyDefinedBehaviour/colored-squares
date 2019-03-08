@@ -6,7 +6,6 @@ class ClickableSquare extends Square {
       mouseY >= this.y &&
       mouseY <= this.y + this.height
     ) {
-      console.log("I was clicked, and my color is", this.color);
       ProjectileList.push(
         new Projectile(
           this.x + this.width / 2,
