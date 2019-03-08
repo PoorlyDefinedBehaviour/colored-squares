@@ -33,6 +33,7 @@ class ScreenEvents {
               : points--;
             break;
         }
+        MovementControl.setSpeed(MovementControl.speed + 0.01);
         EntityList.splice(index, 1);
         SquareCreator.createRandomSquare();
       }
