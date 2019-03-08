@@ -2,9 +2,12 @@ const CANVAS_WIDTH = 401;
 const CANVAS_HEIGHT = 600;
 
 const EntityList = [];
+const ProjectileList = [];
+let points = 0;
 
 function setup() {
   createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT).parent("canvasblock");
+  textSize(32);
 
   EntityList.push(
     new ClickableSquare(0, CANVAS_HEIGHT - 81, 80, 80, true, Colors.all[0])
@@ -38,11 +41,21 @@ function mouseClicked() {
 function draw() {
   background(120);
 
+  fill(255);
+  text(points, CANVAS_WIDTH / 2, 40);
+
   EntityList.forEach(square => {
     fill(square.color);
     square.show();
   });
 
+  ProjectileList.forEach(projectile => {
+    fill(projectile.color);
+    projectile.show();
+  });
+
   MovementControl.moveAll();
+  MovementControl.moveProjectiles();
   ScreenEvents.didAnySquareDie();
+  ScreenEvents.didAnyProjectileDie();
 }

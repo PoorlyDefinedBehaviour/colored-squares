@@ -10,4 +10,10 @@ class MovementControl {
       square.y += this.speed;
     });
   }
+
+  static moveProjectiles() {
+    ProjectileList.forEach(projectile => {
+      projectile.y -= this.speed;
+    });
+  }
 }
