@@ -22,16 +22,13 @@ function setup() {
     new ClickableSquare(320, CANVAS_HEIGHT - 81, 80, 80, true, Colors.all[4])
   );
 
+  SquareCreator.createRandomSquare();
+  SquareCreator.createRandomSquare();
+  SquareCreator.createRandomSquare();
+  SquareCreator.createRandomSquare();
+  SquareCreator.createRandomSquare();
+
   MovementControl.setSpeed(2);
-
-  const SquareFactory = new SquareCreator();
-  SquareFactory.createRandomSquare();
-  SquareFactory.createRandomSquare();
-  SquareFactory.createRandomSquare();
-  SquareFactory.createRandomSquare();
-  SquareFactory.createRandomSquare();
-
-  console.log("entitylist", EntityList);
 }
 
 function mouseClicked() {
@@ -47,4 +44,5 @@ function draw() {
   });
 
   MovementControl.moveAll();
+  ScreenEvents.didAnySquareDie();
 }
