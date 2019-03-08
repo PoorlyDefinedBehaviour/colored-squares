@@ -45,7 +45,7 @@ class ScreenEvents {
           projectile.y < square.y + square.height &&
           !square.isClickable
         ) {
-          if (square.color === projectile.color) {
+          if (square.color.levels[0] === projectile.color.levels[0]) {
             points--;
           }
           EntityList.splice(index, 1);
