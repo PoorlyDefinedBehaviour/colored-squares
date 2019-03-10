@@ -35,7 +35,7 @@ function setup() {
 }
 
 function mouseClicked() {
-  EntityList.forEach(square => square.isClickable && square.clicked());
+  EntityList.forEach(square => square.isClickable && handleClick(square));
 }
 
 function draw() {
@@ -44,15 +44,7 @@ function draw() {
   fill(255);
   text(points, CANVAS_WIDTH / 2, 40);
 
-  EntityList.forEach(square => {
-    fill(square.color);
-    square.show();
-  });
-
-  ProjectileList.forEach(projectile => {
-    fill(projectile.color);
-    projectile.show();
-  });
+  drawEntities(...EntityList, ...ProjectileList);
 
   MovementControl.moveSquares();
   MovementControl.moveProjectiles();

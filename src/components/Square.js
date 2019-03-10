@@ -1,32 +1,14 @@
 class Square {
-  constructor(x, y, width, height, _color, isClickable = false) {
+  constructor(_x, _y, _width, _height, _color, _isClickable = false) {
     this.color = _color;
-    this.x = x;
-    this.y = y;
-    this.width = width;
-    this.height = height;
-    this.isClickable = isClickable;
+    this.x = _x;
+    this.y = _y;
+    this.width = _width;
+    this.height = _height;
+    this.isClickable = _isClickable;
   }
 
   show() {
     rect(this.x, this.y, this.width, this.height);
-  }
-
-  clicked() {
-    if (
-      mouseX >= this.x &&
-      mouseX <= this.x + this.width &&
-      mouseY >= this.y &&
-      mouseY <= this.y + this.height
-    ) {
-      ProjectileList.push(
-        new Projectile(
-          this.x + this.width / 2,
-          this.y + this.height / 2,
-          this.color
-        )
-      );
-      print(ProjectileList);
-    }
   }
 }
