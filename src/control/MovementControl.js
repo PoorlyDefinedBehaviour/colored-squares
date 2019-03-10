@@ -3,10 +3,9 @@ class MovementControl {
     this.speed = _speed;
   }
 
-  static moveAll() {
+  static moveSquares() {
     EntityList.forEach(square => {
       if (square.isClickable) return;
-
       square.y += this.speed;
     });
   }

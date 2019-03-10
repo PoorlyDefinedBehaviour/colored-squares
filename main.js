@@ -10,19 +10,19 @@ function setup() {
   textSize(32);
 
   EntityList.push(
-    new ClickableSquare(0, CANVAS_HEIGHT - 81, 80, 80, true, Colors.all[0])
+    new Square(0, CANVAS_HEIGHT - 81, 80, 80, Colors.all[0], true)
   );
   EntityList.push(
-    new ClickableSquare(80, CANVAS_HEIGHT - 81, 80, 80, true, Colors.all[1])
+    new Square(80, CANVAS_HEIGHT - 81, 80, 80, Colors.all[1], true)
   );
   EntityList.push(
-    new ClickableSquare(160, CANVAS_HEIGHT - 81, 80, 80, true, Colors.all[2])
+    new Square(160, CANVAS_HEIGHT - 81, 80, 80, Colors.all[2], true)
   );
   EntityList.push(
-    new ClickableSquare(240, CANVAS_HEIGHT - 81, 80, 80, true, Colors.all[3])
+    new Square(240, CANVAS_HEIGHT - 81, 80, 80, Colors.all[3], true)
   );
   EntityList.push(
-    new ClickableSquare(320, CANVAS_HEIGHT - 81, 80, 80, true, Colors.all[4])
+    new Square(320, CANVAS_HEIGHT - 81, 80, 80, Colors.all[4], true)
   );
 
   SquareCreator.createRandomSquare();
@@ -54,7 +54,7 @@ function draw() {
     projectile.show();
   });
 
-  MovementControl.moveAll();
+  MovementControl.moveSquares();
   MovementControl.moveProjectiles();
   ScreenEvents.didAnySquareDie();
   ScreenEvents.didAnyProjectileDie();

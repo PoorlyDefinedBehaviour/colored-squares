@@ -4,31 +4,31 @@ class ScreenEvents {
       if (square.y + square.height > CANVAS_HEIGHT + 1) {
         switch (square.x) {
           case 0:
-            EntityList[0].color.levels[0] === square.color.levels[0]
+            JSON.stringify(EntityList[0].color) === JSON.stringify(square.color)
               ? points++
               : points--;
             break;
 
           case 80:
-            EntityList[1].color.levels[0] === square.color.levels[0]
+            JSON.stringify(EntityList[1].color) === JSON.stringify(square.color)
               ? points++
               : points--;
             break;
 
           case 160:
-            EntityList[2].color.levels[0] === square.color.levels[0]
+            JSON.stringify(EntityList[2].color) === JSON.stringify(square.color)
               ? points++
               : points--;
             break;
 
           case 240:
-            EntityList[3].color.levels[0] === square.color.levels[0]
+            JSON.stringify(EntityList[3].color) === JSON.stringify(square.color)
               ? points++
               : points--;
             break;
 
           case 320:
-            EntityList[4].color.levels[0] === square.color.levels[0]
+            JSON.stringify(EntityList[4].color) === JSON.stringify(square.color)
               ? points++
               : points--;
             break;
