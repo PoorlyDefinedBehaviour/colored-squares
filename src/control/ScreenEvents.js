@@ -1,7 +1,7 @@
 class ScreenEvents {
   static didAnySquareDie() {
     EntityList.forEach((square, index) => {
-      if (square.y + square.height > CANVAS_HEIGHT + 1) {
+      if (square.y + square.size > CANVAS_HEIGHT + 1) {
         switch (square.x) {
           case 0:
             JSON.stringify(EntityList[0].color) === JSON.stringify(square.color)
@@ -41,9 +41,9 @@ class ScreenEvents {
       ProjectileList.forEach((projectile, _index) => {
         if (
           projectile.x > square.x &&
-          projectile.x < square.x + square.width &&
+          projectile.x < square.x + square.size &&
           projectile.y > square.y &&
-          projectile.y < square.y + square.height &&
+          projectile.y < square.y + square.size &&
           !square.isClickable
         ) {
           if (square.color.levels[0] === projectile.color.levels[0]) {

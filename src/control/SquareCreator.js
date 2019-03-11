@@ -24,6 +24,6 @@ class SquareCreator {
         break;
       }
     }
-    EntityList.push(new Square(_x, _y, size, size, Colors.random));
+    EntityList.push(new Square(_x, _y, size, Colors.random));
   }
 }
